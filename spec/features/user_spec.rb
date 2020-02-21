@@ -1,6 +1,6 @@
-require 'capybara/rails'
+require 'rails_helper'
 
-RSpec.feature "Users", type: :feature do
+RSpec.feature "Users", type: :system do
   context 'create new user' do
     scenario "should be succesful" do
       visit new_user_registration_path

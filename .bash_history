@@ -10,3 +10,10 @@ rails g mailer user nps
 chmod 777 app/mailers/user_mailer.rb 
 chmod 777 spec/mailers/user_spec.rb 
 exit
+rspec spec/mailers/user_spec.rb 
+rspec spec/mailers/user_spec.rb 
+rspec spec/mailers/user_spec.rb 
+rspec spec/features/user_spec.rb 
+rspec spec/features/user_spec.rb 
+rspec spec/features/user_spec.rb 
+exit
