@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Exit immediately if a command exits with a non-zero status:
+set -e
+
+GIT_BRANCH=${SEMAPHORE_GIT_PR_BRANCH:-${SEMAPHORE_GIT_BRANCH}}
+GIT_COMMIT_SHA=${SEMAPHORE_GIT_PR_SHA:-${SEMAPHORE_GIT_SHA}}
+GIT_COMMIT_SHORT_SHA=${GIT_COMMIT_SHA:0:7}
+BUILD_DATE=$(date +%Y-%m-%dT%H:%M:%S%z)
+TAG_SAFE_BRANCH=$(echo "${GIT_BRANCH}" | tr '/' '-')
+
+echo "BUILD_DATE=${BUILD_DATE}"
+echo "GIT_BRANCH=${GIT_BRANCH}"
+echo "GIT_COMMIT_SHA=${GIT_COMMIT_SHA}"
+echo "GIT_COMMIT_SHORT_SHA=${GIT_COMMIT_SHORT_SHA}"
+echo "TAG_SAFE_BRANCH=${TAG_SAFE_BRANCH}"
