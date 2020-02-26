@@ -1,20 +1,27 @@
 # frozen_string_literal: true
 
 class NetPromoterScore < ApplicationRecord
+  PROMOTER_RANGE = (9..10).freeze
+  PASSIVE_RANGE = (7..8).freeze
+  DETRACTOR_RANGE = (0..6).freeze
+
   validates :score, numericality: {
     greater_than_or_equal_to: 0,
     less_than_or_equal_to: 10
   }
 
   def promoter?
-    score >= 9 && score <= 10
+    PROMOTER_RANGE.cover? score
+    # score >= 9 && score <= 10
   end
 
   def passive?
-    score >= 7 && score <= 8
+    PASSIVE_RANGE.cover? score
+    # score >= 7 && score <= 8
   end
 
   def detractor?
-    score <= 6 && score >= 0
+    DETRACTOR_RANGE.cover? score
+    # score <= 6 && score >= 0
   end
 end
