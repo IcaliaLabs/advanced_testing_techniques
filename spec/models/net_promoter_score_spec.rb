@@ -10,14 +10,14 @@ RSpec.describe NetPromoterScore, type: :model do
   describe '#promoter?' do
     it 'returns true when value is 9 or 10' do
       9.upto(10).each do |i|
-        net_promoter_score = build(:net_promoter_score, score: i)
+        net_promoter_score = create(:net_promoter_score, score: i)
 
         expect(net_promoter_score).to be_promoter
       end
     end
 
     it 'returns true when value is less than 10' do
-      net_promoter_score = build(:net_promoter_score, score: 1)
+      net_promoter_score = create(:net_promoter_score, score: 1)
 
       expect(net_promoter_score).not_to be_promoter
     end
@@ -32,22 +32,46 @@ RSpec.describe NetPromoterScore, type: :model do
   describe '#passive?' do
     it 'returns true when value is 7 or 8' do
       7.upto(8).each do |i|
-        net_promoter_score = build(:net_promoter_score, score: i)
+        net_promoter_score = create(:net_promoter_score, score: i)
 
         expect(net_promoter_score).to be_passive
       end
     end
 
     it 'returns false if score is less than 7' do
-      net_promoter_score = build(:net_promoter_score, score: 6)
+      net_promoter_score = create(:net_promoter_score, score: 6)
 
       expect(net_promoter_score).not_to be_passive
     end
 
     it 'returns false if score is greater than 8' do
-      net_promoter_score = build(:net_promoter_score, score: 9)
+      net_promoter_score = create(:net_promoter_score, score: 9)
 
       expect(net_promoter_score).not_to be_passive
+    end
+  end
+
+  describe '#dretractor?' do
+    it 'returns true when value is less than 7' do
+      0.upto(6).each do |i|
+        net_promoter_score = create(:net_promoter_score, score: i)
+
+        expect(net_promoter_score).to be_detractor
+      end
+    end
+
+    it 'returns false if value is greater than 6' do
+      7.upto(10).each do |i|
+        net_promoter_score = create(:net_promoter_score, score: i)
+
+        expect(net_promoter_score).not_to be_detractor
+      end
+    end
+
+    it 'returns false if value is less than 0' do
+      net_promoter_score = build(:net_promoter_score, score: -1)
+
+      expect(net_promoter_score).not_to be_detractor
     end
   end
 end
