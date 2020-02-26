@@ -1,52 +1,30 @@
-# advanced_testing_techniques
+# Advanced_testing_techniques
 
--- PLEASE ADD A DESCRIPTION --
+This repository will hold all of the exercises for the Advanced Testing Techniques by Icalia Labs.
 
 ## Table of contents
 
-* [Client Details](#client-details)
-* [Environment URLS](#environment-urls)
-* [Da Team](#team)
-* [Management resources](#management-resources)
+* [Assignments](#assignments)
 * [Setup the project](#setup-the-project)
 * [Running the stack for development](#running-the-stack-for-development)
 * [Stop the project](#stop-the-project)
 * [Restoring the database](#restoring-the-database)
 * [Debugging](#debugging)
 * [Running specs](#running-specs)
-* [Contributing](CONTRIBUTING.md)
-* [PR Template](PULL_REQUEST_TEMPLATE.md)
-* [Analyzing code for issues](#analyzing-code)
 
-### Client Details
+## Assignments
 
-| Name  | Email | Role | Slack |
-| ------------- | ------------- | ------------- | ------------- |
-| Client name | email@fromclient.com | CEO | @client |
-| Client name | email@fromclient.com | CEO | @client |
-| Client name | email@fromclient.com | CEO | @client |
+You assignment for this lessons is to implement tests using TDD for the following methods:
+
+1. Create a method to return only the promoter records 
+2. Create a method to return only the passive records 
+3. Create a method to return only the detractor records 
 
 
-### Environment URLS
+**Before you start typing, please be aware that we want to enforce you to play around with TDD, so place the commits in the right order, in other words, first write the tests, commit, then a simple implementation, commit and finally refactor and commit.**
 
-* **Production** - [https://advanced_testing_techniques-production.herokuapp.com](https://advanced_testing_techniques-production.herokuapp.com)
-* **Staging** - [https://advanced_testing_techniques-staging.herokuapp.com](https://advanced_testing_techniques-staging.herokuapp.com)
+When you are done, please create a PR, and ask anyone from Tech to review, just if you are an icalier, sorry folks.
 
-### Da team
-
-| Name  | Email | Role |
-| ------------- | ------------- | ------------- |
-| FirstName LastName | mail@icalialabs.com  | Development |
-| FirstName LastName | mail@icalialabs.com  | Development |
-
-### Management tools
-
-You should ask for access to this tools if you don't have it already:
-
-* [Github repo](https://github.com/IcaliaLabs/advanced_testing_techniques)
-* [Pivotal tracker project](https://www.pivotaltracker.com/)
-* [Client Slack](https://change-me.slack.com/)
-* [Heroku](https://heroku.com)
 
 ## Development
 
