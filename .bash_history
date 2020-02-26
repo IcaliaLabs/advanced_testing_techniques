@@ -17,3 +17,15 @@ rspec spec/features/user_spec.rb
 rspec spec/features/user_spec.rb 
 rspec spec/features/user_spec.rb 
 exit
+rails db:migrate
+ls
+whoaim
+whoami
+rm Gemfile.lock 
+bundle
+rails db:migrate
+exit
+rails db:migrate
+exit
+rails db:migrate
+exit

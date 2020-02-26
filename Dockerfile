@@ -70,6 +70,10 @@ RUN apt-get update && \
     chromium-driver \
     git \
     graphviz \
+     # Required by vscode-remote to figure out the container's ip address:
+    net-tools \
+    # Required by VSCode to properly install vscode-remote as non-root user:
+    sudo \
     libpq-dev && \
     rm -rf /var/lib/apt/lists/*
 
@@ -101,6 +105,20 @@ COPY . /usr/src
 
 # Step 20: Install Yarn packages:
 RUN yarn install
+
+# Step 23: Receive the developer user's UID:
+ARG DEVELOPER_UID=1000
+
+# Step 24: Receive the developer user's username:
+ARG DEVELOPER_USERNAME=you
+
+# Step 25: Set the developer's UID as an environment variable:
+ENV DEVELOPER_UID=${DEVELOPER_UID}
+
+# Step 26: Create the developer user:
+RUN useradd -r -M -u ${DEVELOPER_UID} -d /usr/src -c "Developer User,,," ${DEVELOPER_USERNAME} \
+ && echo ${DEVELOPER_USERNAME} ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/${DEVELOPER_USERNAME} \
+ && chmod 0440 /etc/sudoers.d/${DEVELOPER_USERNAME}
 
 # IV: Builder stage: ===========================================================
 # In this stage we'll compile assets coming from the project's source, do some

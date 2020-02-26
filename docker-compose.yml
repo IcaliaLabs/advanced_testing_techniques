@@ -4,9 +4,6 @@ volumes:
   postgres_data:
   redis_data:
 
-networks:
-  backend:
-
 services:
   redis:
     image: redis:5.0-alpine
@@ -14,16 +11,12 @@ services:
       - ${REDIS_PORT:-6379}:6379
     volumes:
       - redis_data:/data
-    networks:
-      - backend
     command: redis-server
   postgres:
     image: postgres:10.6-alpine
     volumes:
       # We'll store the postgres data in the 'postgres_data' volume we defined:
       - postgres_data:/var/lib/postgresql/data
-    networks:
-      - backend
     environment:
       POSTGRES_PASSWORD: 3x4mpl3P455w0rd
 
