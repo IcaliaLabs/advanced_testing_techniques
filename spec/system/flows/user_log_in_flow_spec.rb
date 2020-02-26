@@ -9,7 +9,7 @@ RSpec.describe 'UserLogInFlow', type: :system do
     within('form') do
       fill_in 'Email', with: user.email
       fill_in 'Password', with: '12345678'
-      click_on('Log in')
+      click_on I18n.t('devise.sessions.form.actions.submit')
     end
     expect(page).to have_current_path root_path, ignore_query: true
   end
