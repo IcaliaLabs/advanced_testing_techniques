@@ -1,0 +1,2 @@
+class NetPromoterScore < ApplicationRecord
+end
