@@ -29,3 +29,5 @@ rails db:migrate
 exit
 rails db:migrate
 exit
+rails db:drop
+exit
