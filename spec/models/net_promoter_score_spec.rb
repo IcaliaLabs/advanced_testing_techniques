@@ -8,10 +8,12 @@ RSpec.describe NetPromoterScore, type: :model do
   end
 
   describe '#promoter?' do
-    it 'returns true when value is 9' do
-      net_promoter_score = build(:net_promoter_score, score: 9)
+    it 'returns true when value is 9 or 10' do
+      9.upto(10).each do |i|
+        net_promoter_score = build(:net_promoter_score, score: i) 
 
-      expect(net_promoter_score).to be_promoter
+        expect(net_promoter_score).to be_promoter
+      end
     end
 
     it 'returns true when value is less than 10' do
