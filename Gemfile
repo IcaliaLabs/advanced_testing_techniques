@@ -38,6 +38,9 @@ group :development do
   gem 'reek', '~> 5.6'
   gem 'rubocop', '~> 0.80.0'
   gem 'ruby-debug-ide', '~> 0.7.0'
+  gem 'rubocop-rspec'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails', '~> 2.4.2'
 
   # IDE tools for code completion, inline documentation, and static analysis
   gem 'solargraph', '~> 0.38.0'
