@@ -6,4 +6,24 @@ RSpec.describe NetPromoterScore, type: :model do
       .is_greater_than_or_equal_to(0)
       .is_less_than_or_equal_to(10)
   end
+
+  describe '#promoter?' do
+    it 'returns true when value is 9' do
+      net_promoter_score = build(:net_promoter_score, score: 9)
+
+      expect(net_promoter_score).to be_promoter
+    end
+
+    it 'returns true when value is less than 10' do
+      net_promoter_score = build(:net_promoter_score, score: 1)
+
+      expect(net_promoter_score).not_to be_promoter
+    end
+
+    it 'returns false when value is greater 10' do
+      net_promoter_score = build(:net_promoter_score, score: 11)
+
+      expect(net_promoter_score).not_to be_promoter
+    end
+  end
 end
