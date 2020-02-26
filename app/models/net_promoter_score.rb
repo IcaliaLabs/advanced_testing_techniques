@@ -9,4 +9,8 @@ class NetPromoterScore < ApplicationRecord
   def promoter?
     score >= 9 && score <= 10
   end
+
+  def passive?
+    score >= 7 && score <= 8
+  end
 end

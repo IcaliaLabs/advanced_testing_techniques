@@ -10,7 +10,7 @@ RSpec.describe NetPromoterScore, type: :model do
   describe '#promoter?' do
     it 'returns true when value is 9 or 10' do
       9.upto(10).each do |i|
-        net_promoter_score = build(:net_promoter_score, score: i) 
+        net_promoter_score = build(:net_promoter_score, score: i)
 
         expect(net_promoter_score).to be_promoter
       end
@@ -26,6 +26,28 @@ RSpec.describe NetPromoterScore, type: :model do
       net_promoter_score = build(:net_promoter_score, score: 11)
 
       expect(net_promoter_score).not_to be_promoter
+    end
+  end
+
+  describe '#passive?' do
+    it 'returns true when value is 7 or 8' do
+      7.upto(8).each do |i|
+        net_promoter_score = build(:net_promoter_score, score: i)
+
+        expect(net_promoter_score).to be_passive
+      end
+    end
+
+    it 'returns false if score is less than 7' do
+      net_promoter_score = build(:net_promoter_score, score: 6)
+
+      expect(net_promoter_score).not_to be_passive
+    end
+
+    it 'returns false if score is greater than 8' do
+      net_promoter_score = build(:net_promoter_score, score: 9)
+
+      expect(net_promoter_score).not_to be_passive
     end
   end
 end
