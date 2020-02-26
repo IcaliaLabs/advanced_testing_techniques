@@ -11,6 +11,11 @@ docker-compose*.yml
 **/*.env
 .dockerignore
 
+#VSCode folders:
+.vscode
+.vscode-server
+.devcontainer
+
 # Ignore log files:
 log/*.log
 
@@ -57,3 +62,6 @@ coverage/*
 # Ignore CI/CD Files:
 .semaphore
 ci-compose.yml
+
+# Solargraph
+.solargraph

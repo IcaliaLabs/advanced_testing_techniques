@@ -32,6 +32,15 @@ group :development do
   gem "annotate"
   gem "rack-timeout", require:"rack/timeout/base"
   gem "rails-erd"
+
+    # Support for Ruby IDE tools - including "Ruby for Visual Studio Code"
+  gem 'debase', '~> 0.2.4.1'
+  gem 'reek', '~> 5.6'
+  gem 'rubocop', '~> 0.80.0'
+  gem 'ruby-debug-ide', '~> 0.7.0'
+
+  # IDE tools for code completion, inline documentation, and static analysis
+  gem 'solargraph', '~> 0.38.0'
 end
 
 # Test gems

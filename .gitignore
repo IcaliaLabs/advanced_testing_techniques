@@ -37,6 +37,7 @@
 /coverage
 
 .local
+.bash_history
 
 # Ignore container's home directory artifacts;
 /.cache
@@ -51,10 +52,30 @@
 .reek.yml
 .scss-lint.yml
 
-
 /public/packs
 /public/packs-test
 /node_modules
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+
+# Ignore git config generated in the container:
+.gitconfig
+
+# Ignore npm configuration
+.npm
+
+# Ignore .vscode-server, because when developing from within a container in
+# VSCode will try to add these to the Git project:
+.vscode-server
+
+# Ignore gnupg keys, which may get mounted by VSCode remote:
+.gnupg
+
+# Ignore solargraph config
+.solargraph
+
+# WebDriver files
+.webdrivers/
+.config/chromium
