@@ -9,7 +9,7 @@ RSpec.describe UserMailer, type: :mailer do
     let(:mail) { described_class.nps(user) }
 
     it 'sets the correct subject' do
-      expect(mail.subject).to eq('Do you have 60 seconds for a quick question?')
+      expect(mail.subject).to eq I18n.t('user_mailer.nps.subject')
     end
 
     it 'has the correct user to header' do

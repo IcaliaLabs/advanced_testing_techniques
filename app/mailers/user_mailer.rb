@@ -10,6 +10,6 @@ class UserMailer < ApplicationMailer
     @user = user
 
     mail to: @user.email,
-         subject: 'Do you have 60 seconds for a quick question?'
+         subject: t('user_mailer.nps.subject')
   end
 end
