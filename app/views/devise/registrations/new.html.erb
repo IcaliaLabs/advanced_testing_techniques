@@ -17,12 +17,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, t('devise.registrations.form.fields.password_confirmation') %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit t('devise.registrations.form.actions.submit') %>
   </div>
 <% end %>
 

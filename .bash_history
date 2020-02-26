@@ -31,3 +31,7 @@ rails db:migrate
 exit
 rails db:drop
 exit
+#!/bin/bash -i
+export
+#!/bin/bash -i
+export
