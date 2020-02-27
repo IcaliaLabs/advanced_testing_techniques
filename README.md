@@ -14,16 +14,9 @@ This repository will hold all of the exercises for the Advanced Testing Techniqu
 
 ## Assignments
 
-You assignment for this lessons is to implement tests using TDD for the following methods:
+You assignment for this will be to go to a local repository, legacy project or something you are currently working on, and refactor using one of this techniques. After that create a PR and assign it to @kurenn @vovimayhem @miguejs on github.
 
-1. Create a method to return only the promoter records 
-2. Create a method to return only the passive records 
-3. Create a method to return only the detractor records 
-
-
-**Before you start typing, please be aware that we want to enforce you to play around with TDD, so place the commits in the right order, in other words, first write the tests, commit, then a simple implementation, commit and finally refactor and commit.**
-
-When you are done, please create a PR, and ask anyone from Tech to review, just if you are an icalier, sorry folks.
+Happy coding!
 
 
 ## Development
