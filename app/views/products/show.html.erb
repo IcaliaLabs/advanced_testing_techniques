@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_for @product do |f| %>
+  <%= f.hidden_field :status, value: :published %>
+  <%= f.submit 'Publish' %>
+<% end %>
+
 <p class='product_title'>
   <%= @product.status.capitalize %> - <%= @product.name %>
 </p>

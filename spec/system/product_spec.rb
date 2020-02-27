@@ -9,7 +9,7 @@ RSpec.describe 'Product', type: :system do
       fill_in :product_name, with: 'Xbox One'
       fill_in :product_description, with: 'It is so fun to play with this!'
       fill_in :product_price, with: 500
-      click_button 'Save as draft'
+      click_button 'Create'
 
       expect(page).to(
         have_css('p.product_title', text: "Draft - Xbox One")
@@ -23,6 +23,8 @@ RSpec.describe 'Product', type: :system do
       fill_in :product_name, with: 'Nintendo Switch'
       fill_in :product_description, with: 'It is a console more for the young ones!'
       fill_in :product_price, with: 300
+      click_button 'Create'
+
       click_button 'Publish'
 
       expect(page).to(
