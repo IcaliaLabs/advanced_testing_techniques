@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p><span class='status'><%= @product.status.capitalize %></span></p>
+<p class='product_title'>
+  <%= @product.status.capitalize %> - <%= @product.name %>
+</p>
 
 <p>
   <strong>Name:</strong>
