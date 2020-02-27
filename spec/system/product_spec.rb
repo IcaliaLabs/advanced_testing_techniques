@@ -20,7 +20,21 @@ module Page
     end
 
     def exists?
-      has_css?('p.product_title', text: "Draft - #{@name}")
+      product_title.has_text? "Draft - #{@name}"
+    end
+
+    def publish
+      click_button 'Publish'
+    end
+
+    def published?
+      product_title.has_text? "Published - #{@name}"
+    end
+
+    private
+    
+    def product_title
+      find('p.product_title')
     end
   end
 end
@@ -36,24 +50,15 @@ RSpec.describe 'Product', type: :system do
     end
   end
 
-  def create_product(product_name)
-    visit new_product_path
-    fill_in :product_name, with: product_name
-    fill_in :product_description, with: 'description'
-    fill_in :product_price, with: 500
-    click_button 'Create'
-  end
-
   context 'Product publication' do
-    it 'cancels the product' do
+    it 'publishes the product' do
       product_name = 'Nintendo Switch'
-      create_product product_name
+      page_product = Page::Product.new(product_name)
+      page_product.create
 
-      click_button 'Publish'
+      page_product.publish
 
-      expect(page).to(
-        have_css('p.product_title', text: "Published - #{product_name}")
-      )
+      expect(page_product).to be_published
     end
   end
 end
