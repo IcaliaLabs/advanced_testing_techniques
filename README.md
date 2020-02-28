@@ -14,7 +14,7 @@ This repository will hold all of the exercises for the Advanced Testing Techniqu
 
 ## Assignments
 
-You assignment for this will be to go to a local repository, legacy project or something you are currently working on, and refactor using one of this techniques. After that create a PR and assign it to @kurenn @vovimayhem @miguejs on github.
+You assignment for this, will be to refactor some system specs you have than can use this pattern, you know you have some!, refactor them, and place PR assigned to anyone from tech, @vovimayhem @miguejs or @kurenn.
 
 Happy coding!
 

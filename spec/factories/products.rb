@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :product do
     name { FFaker::Product.product_name }
-    price { 10.00 }
-    description { "A sample description" }
+    description { FFaker::Product.letters(200) }
+    price { 100.0 }
   end
 end
