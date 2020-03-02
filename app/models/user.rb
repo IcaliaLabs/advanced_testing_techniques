@@ -10,4 +10,10 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}".strip
   end
+
+  def shop_ready?
+    # completed_profile?
+      # && billing_information?
+      # && active_plan?
+  end
 end
