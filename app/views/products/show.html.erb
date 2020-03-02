@@ -24,7 +24,7 @@
   <%= @product.price %>
 </p>
 
-<% if user_signed_in? && current_user.admin? %>
+<% if current_user.admin? %>
   <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 
