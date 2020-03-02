@@ -14,6 +14,7 @@ module Page
       fill_in :product_name, with: @name
       fill_in :product_description, with: 'description'
       fill_in :product_price, with: 500
+      select Shop.first.name, from: :product_shop_id
       click_button 'Create'
     end
 
