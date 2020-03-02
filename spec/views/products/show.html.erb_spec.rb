@@ -3,12 +3,11 @@ require 'rails_helper'
 RSpec.describe 'products/show', type: :view do
   before do
     assign(:product, build_stubbed(:product))
-    allow(view).to receive(:user_signed_in?).and_return(true)
   end
 
   context 'when user is admin' do
     it 'renders a destroy link' do
-      allow(view).to receive(:current_user).and_return(build_stubbed(:user, :as_admin))
+      allow(view).to receive(:current_user).and_return(instance_double(User, admin?: true))
 
       render
 
@@ -18,7 +17,7 @@ RSpec.describe 'products/show', type: :view do
   
   context 'when user is not admin' do
     it 'does not render a destroy link' do
-      allow(view).to receive(:current_user).and_return(build_stubbed(:user))
+      allow(view).to receive(:current_user).and_return(instance_double(User, admin?: false))
 
       render
 
