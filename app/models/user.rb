@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :shops
+  has_one :account
+
+  def full_name
+    "#{first_name} #{last_name}".strip
+  end
 end
