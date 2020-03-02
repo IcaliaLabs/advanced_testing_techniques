@@ -6,6 +6,10 @@ FactoryBot.define do
     password { '12345678' } 
     password_confirmation { '12345678' }
 
+    trait :as_admin do
+      admin { true }
+    end
+
     after(:create) do |user|
       create_list(:shop, 1, user: user)
     end
