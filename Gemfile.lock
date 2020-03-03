@@ -99,6 +99,8 @@ GEM
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     concurrent-ruby (1.1.6)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     crass (1.0.6)
     debase (0.2.4.1)
       debase-ruby_core_source (>= 0.10.2)
@@ -125,6 +127,7 @@ GEM
     ffi (1.12.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    hashdiff (1.0.1)
     hirb (0.7.3)
     httparty (0.18.0)
       mime-types (~> 3.0)
@@ -276,6 +279,7 @@ GEM
     ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     rubyzip (2.2.0)
+    safe_yaml (1.0.5)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -354,6 +358,10 @@ GEM
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
       selenium-webdriver (>= 3.0, < 4.0)
+    webmock (3.8.2)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
     webpacker (4.2.2)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
@@ -381,6 +389,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   ffaker
+  httparty
   listen (>= 3.0.5, < 3.2)
   normalize-rails
   pg (>= 0.18, < 2.0)
@@ -413,6 +422,7 @@ DEPENDENCIES
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers (~> 4.0)
+  webmock
   webpacker (~> 4.0)
 
 RUBY VERSION

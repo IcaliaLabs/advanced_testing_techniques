@@ -11,6 +11,8 @@ if Rails.env.production?
   abort('The Rails environment is running in production mode!')
 end
 require 'rspec/rails'
+require 'webmock/rspec'
+require 'httparty'
 # require 'simplecov_helper'
 # Add additional requires below this line. Rails is not loaded until this point!
 
