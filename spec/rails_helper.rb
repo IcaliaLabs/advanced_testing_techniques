@@ -11,6 +11,8 @@ if Rails.env.production?
   abort('The Rails environment is running in production mode!')
 end
 require 'rspec/rails'
+require 'webmock/rspec'
+require 'httparty'
 # require 'simplecov_helper'
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -65,6 +67,9 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.include Devise::TestHelpers, type: :view
+  config.include Warden::Test::Helpers
 end
 
 Shoulda::Matchers.configure do |config|

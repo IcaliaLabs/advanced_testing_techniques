@@ -3,6 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Product', type: :system do
+  before do
+    login_as(create(:user, :as_admin), scope: :user)
+  end
+
   context 'Product creation' do
     it 'creates the product' do
       product_name = 'Xbox One'

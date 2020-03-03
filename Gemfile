@@ -32,6 +32,7 @@ group :development do
   gem "annotate"
   gem "rack-timeout", require:"rack/timeout/base"
   gem "rails-erd"
+  gem 'httparty'
 
     # Support for Ruby IDE tools - including "Ruby for Visual Studio Code"
   gem 'debase', '~> 0.2.4.1'
@@ -55,6 +56,7 @@ group :test do
   gem "simplecov-console", "~> 0.4.2", require: false
   gem "simplecov-json", require: false
   gem "simplecov-reporter", require: false
+  gem 'webmock'
 end
 
 group :development, :test do
