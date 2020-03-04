@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Shop, type: :model do
+RSpec.describe User, type: :model do
   describe '#full_name' do
 
     it 'returns the first_name and last_name concatenaded' do

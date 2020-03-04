@@ -1,5 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe Shop, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#subscribe' do
+
+    it 'subscribes to a payment plan' do
+      shop = create(:shop)
+
+      shop.subscribe
+
+      expect(shop).to be_premium
+    end
+  end
+
+  describe '#unsubscribe' do
+    it 'unsubscribes from a payment plan' do
+    end
+  end
 end
