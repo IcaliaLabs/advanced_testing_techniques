@@ -3,6 +3,18 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  describe '.recent' do
+    it 'returns the users from newest to oldest' do
+      user_1 = create(:user, created_at: 3.days.ago)
+      user_2 = create(:user, created_at: 2.days.ago)
+      user_3 = create(:user, created_at: 1.days.ago)
+
+      users = User.recent
+
+      expect(users).to eq [user_3, user_2, user_1]
+    end
+  end
+
   describe '#full_name' do
 
     it 'returns the first_name and last_name concatenaded' do

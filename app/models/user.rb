@@ -7,6 +7,9 @@ class User < ApplicationRecord
   has_many :shops
   has_one :account
 
+  def self.recent
+  end
+
   def full_name
     "#{first_name} #{last_name}".strip
   end
