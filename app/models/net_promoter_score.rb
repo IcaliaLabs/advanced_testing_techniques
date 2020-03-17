@@ -7,6 +7,7 @@ class NetPromoterScore < ApplicationRecord
 
   scope :promoter, ->{ where score: PROMOTER_RANGE }
   scope :passive, ->{ where score: PASSIVE_RANGE }
+  scope :detractor, ->{ where score: DETRACTOR_RANGE }
 
   validates :score, numericality: {
     greater_than_or_equal_to: 0,
