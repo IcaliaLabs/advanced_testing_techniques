@@ -74,4 +74,13 @@ RSpec.describe NetPromoterScore, type: :model do
       expect(net_promoter_score).not_to be_detractor
     end
   end
+
+  describe '.promoter' do
+    it 'includes records with scores within promoter range' do
+      (9..10).each do |score|
+        net_promoter_score = build :net_promoter_score, score: score
+        expect(subject.promoter).to include(net_promoter_score)
+      end
+    end
+  end
 end
