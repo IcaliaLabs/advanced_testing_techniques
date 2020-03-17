@@ -39,7 +39,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 # Step 9: Install the common runtime dependencies:
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    apt-transport-https software-properties-common \
+    apt-transport-https software-properties-common --allow-unauthenticated \
     ca-certificates \
     libpq5 \
     openssl \
