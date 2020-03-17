@@ -74,4 +74,54 @@ RSpec.describe NetPromoterScore, type: :model do
       expect(net_promoter_score).not_to be_detractor
     end
   end
+
+  describe '.promoter' do
+    it 'includes records with scores within promoter range' do
+      (9..10).each do |score|
+        net_promoter_score = create :net_promoter_score, score: score
+        expect(NetPromoterScore.promoter).to include(net_promoter_score)
+      end
+    end
+
+    it 'excludes records with scores not within promoter range' do
+      (0..8).each do |score|
+        net_promoter_score = create :net_promoter_score, score: score
+        expect(NetPromoterScore.promoter).to_not include(net_promoter_score)
+      end
+    end
+  end
+
+  describe '.passive' do
+    it 'includes records with scores within passive range' do
+      (7..8).each do |score|
+        net_promoter_score = create :net_promoter_score, score: score
+        expect(NetPromoterScore.passive).to include(net_promoter_score)
+      end
+    end
+
+    it 'excludes records with scores not within passive range' do
+      [(0..6),(9..10)].each do |range|
+        range.each do |score|
+          net_promoter_score = create :net_promoter_score, score: score
+          expect(NetPromoterScore.passive).to_not include(net_promoter_score)
+        end
+      end
+    end
+  end
+
+  describe '.detractor' do
+    it 'includes records with scores within detractor range' do
+      (0..6).each do |score|
+        net_promoter_score = create :net_promoter_score, score: score
+        expect(NetPromoterScore.detractor).to include(net_promoter_score)
+      end
+    end
+
+    it 'excludes records with scores not within detractor range' do
+      (7..10).each do |score|
+        net_promoter_score = create :net_promoter_score, score: score
+        expect(NetPromoterScore.detractor).to_not include(net_promoter_score)
+      end
+    end
+  end
 end

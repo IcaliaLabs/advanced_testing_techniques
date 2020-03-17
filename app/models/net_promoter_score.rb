@@ -5,6 +5,10 @@ class NetPromoterScore < ApplicationRecord
   PASSIVE_RANGE = (7..8).freeze
   DETRACTOR_RANGE = (0..6).freeze
 
+  scope :promoter, ->{ where score: PROMOTER_RANGE }
+  scope :passive, ->{ where score: PASSIVE_RANGE }
+  scope :detractor, ->{ where score: DETRACTOR_RANGE }
+
   validates :score, numericality: {
     greater_than_or_equal_to: 0,
     less_than_or_equal_to: 10
