@@ -98,5 +98,14 @@ RSpec.describe NetPromoterScore, type: :model do
         expect(NetPromoterScore.passive).to include(net_promoter_score)
       end
     end
+
+    it 'excludes records with scores not within passive range' do
+      [(0..6),(9..10)].each do |range|
+        range.each do |score|
+          net_promoter_score = create :net_promoter_score, score: score
+          expect(NetPromoterScore.passive).to_not include(net_promoter_score)
+        end
+      end
+    end
   end
 end
