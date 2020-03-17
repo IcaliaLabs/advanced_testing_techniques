@@ -90,4 +90,13 @@ RSpec.describe NetPromoterScore, type: :model do
       end
     end
   end
+
+  describe '.passive' do
+    it 'includes records with scores within passive range' do
+      (7..8).each do |score|
+        net_promoter_score = create :net_promoter_score, score: score
+        expect(NetPromoterScore.passive).to include(net_promoter_score)
+      end
+    end
+  end
 end
